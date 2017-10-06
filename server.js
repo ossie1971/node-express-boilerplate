@@ -54,14 +54,16 @@ app.use(express.static(path.join(__dirname, 'public'), {
 }));
 
 /* Bootstrap DB Connection */
+if (config.useMongo) {
+    require([__dirname, 'app/dal/mongodb-connect'].join('/'))(config.mongodb);
+    fs.readdirSync([__dirname, 'app/models'].join('/'))
+        .forEach(function (model) {
+            if (~model.indexOf('.js') && !(model.indexOf('.') === 0)) {
+                require([__dirname, 'app/models', model].join('/'));
+            }
+        });
 
-require([__dirname, 'app/dal/mongodb-connect'].join('/'))(config.mongodb);
-fs.readdirSync([__dirname, 'app/models'].join('/'))
-    .forEach(function (model) {
-        if (~model.indexOf('.js') && !(model.indexOf('.') === 0)) {
-            require([__dirname, 'app/models', model].join('/'));
-        }
-    });
+}
 
 
 

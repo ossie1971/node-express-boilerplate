@@ -2,12 +2,18 @@
 const mongoose = require('mongoose');
 const mysql = require('../dal/mysql-connect');
 const sql = require('../dal/sql');
+const config = require(['../../config', process.env.NODE_ENV].join('/'));
 
 module.exports.mongoTest = (args, callback) => {
-    const model = mongoose.get('db').model('exampleModel');
-    model.find(args.query, (err, result) => {
-        callback(err, result);
-    });
+    if (config.useMongo) {
+        const model = mongoose.get('db').model('exampleModel');
+        model.find(args.query, (err, result) => {
+            callback(err, result);
+        });
+    } else {
+        callback(new Error('You must install and enable MongoDb'));
+    }
+
 };
 
 module.exports.mySqlTest = (args, callback) => {
@@ -18,6 +24,6 @@ module.exports.mySqlTest = (args, callback) => {
     });
 };
 
-module.exports.sum = (a,b) => {
-    return a+b;
+module.exports.sum = (a, b) => {
+    return a + b;
 };
