@@ -1,0 +1,17 @@
+extends layout
+block content
+    h1 Database Test
+    p.lead Some results
+    hr
+    if data
+        h5 #{data.length} Result(s)
+        ul
+            each r in data
+                li #{r._id} - #{r.title} 
+                    | 
+                    br 
+                    #{r}
+    
+
+        
+   
