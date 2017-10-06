@@ -1,4 +1,4 @@
-node-boilerplate
+node-express-boilerplate
 =========
 
 Boilerplate for Node.js Express applications
@@ -17,7 +17,7 @@ Boilerplate for Node.js Express applications
 
 Copy / Rename Folder
 
-    cp -r node-boilerplate YOUR_APP_NAME
+    cp -r node-express-boilerplate YOUR_APP_NAME
 
 Switch to new Directory  
 

@@ -13,5 +13,5 @@ module.exports = {
         password: '',
         database: 'your-mysql-db'
     },
-    useMongo: true // enable mongoDb bootstrapping
+    useMongo: false // enable mongoDb bootstrapping
 };
