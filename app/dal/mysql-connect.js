@@ -1,7 +1,7 @@
 'use strict';
 
 const mysql = require('mysql');
-var config = require(['../../config', process.env.NODE_ENV || 'development'].join('/'));
+const config = require(['../../config', process.env.NODE_ENV || 'development'].join('/'));
 
 
 const pool = mysql.createPool({

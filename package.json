@@ -12,11 +12,14 @@
   },
   "jest": {
     "reporters": [
-        ["jest-nyan-reporter", {
+      [
+        "jest-nyan-reporter",
+        {
           "suppressErrorReporter": false
-        }]
+        }
       ]
-    },
+    ]
+  },
   "author": "Lee Harvey <lee.harvey@haven.com>",
   "devDependencies": {
     "eslint": "^4.8.0",
